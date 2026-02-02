@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question6</title>
+</head>
+<body>
+    <p id="res" style="background-color: blue;">Original Text</p>
+    <button id="btn">Click to Change</button>
+    <script>
+        const p = document.querySelector("#res");
+        const btn=document.querySelector("#btn");
+        const originalText=p.textContent;
+        const originalColor = p.style.backgroundColor;
+
+        btn.addEventListener("click", () => {
+            if (p.textContent === originalText) {
+                p.textContent = "Text Changed!";
+                p.style.backgroundColor = "red";
+            } else {
+                p.textContent = originalText;
+                p.style.backgroundColor = originalColor;
+            }
+        });
+    </script>
+</body>
+</html>

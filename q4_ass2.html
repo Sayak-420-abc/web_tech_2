@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+</head>
+<body>
+    <button id="btn">Change Background</button>
+    <script>
+        const btn = document.querySelector("#btn");
+
+        function randomHexColor() {
+            const hex = Math.floor(Math.random() * (256*256*256)).toString(16);
+            return `#${hex.padStart(6, "0")}`;
+        }
+
+        btn.addEventListener("click", () => {
+            document.body.style.backgroundColor = randomHexColor();
+        });
+    </script>
+</body>
+</html>

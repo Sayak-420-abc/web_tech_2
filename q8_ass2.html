@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question8</title>
+</head>
+<body>
+    <label for="text">Enter text </label>
+    <input type="text" id="text">
+    <button id="btn">Click</button>
+    <br>
+    <p id="res"></p>
+    <script>
+        const text = document.querySelector("#text");
+        const btn=document.querySelector("#btn");
+        const p=document.querySelector("#res");
+        btn.addEventListener("click",()=>{
+            const text = document.querySelector("#text");
+            if(!text.value) {p.textContent="WARNING: Field cannot be empty"; alert("Field cannot be empty")}
+            else p.textContent="";
+        })
+    </script>
+</body>
+</html>

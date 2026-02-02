@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question7</title>
+    <style>
+        .style{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p id="res">Paragraph is visible</p>
+    <button id="btn">Click</button>
+    <script>
+        const p = document.querySelector("#res");
+        const btn=document.querySelector("#btn");
+        btn.addEventListener("click",()=>{
+            p.classList.toggle("style");
+        })
+    </script>
+</body>
+</html>

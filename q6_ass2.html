@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question6</title>
+</head>
+<body>
+    <label for="sub1">Enter marks of subject 1: </label>
+    <input type="number" id="sub1" required>
+    <label for="sub2">Enter marks of subject 2: </label>
+    <input type="number" id="sub2" required>
+    <label for="sub3">Enter marks of subject 3: </label>
+    <input type="number" id="sub3" required>
+    <p id="res"></p>
+    <button id="btn">Click for result</button>
+    <script>
+        const p = document.querySelector("#res");
+        const btn=document.querySelector("#btn");
+        btn.addEventListener("click", () => {
+            const sub1 = Number(document.querySelector("#sub1").value);
+            const sub2 = Number(document.querySelector("#sub2").value);
+            const sub3 = Number(document.querySelector("#sub3").value);
+            const total=sub1+sub2+sub3;
+            p.innerHTML = `Total: ${total} <br> Average: ${total/3}<br> Result: ${total/3>=40?"Pass":"Fail"} `;
+        });
+    </script>
+</body>
+</html>

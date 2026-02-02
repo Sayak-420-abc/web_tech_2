@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question1</title>
+</head>
+<body>
+    <label>Enter a number: </label>
+    <input type="number" id="num" placeholder="0">
+    <p id="res"></p>
+
+    <script>
+        const num = document.querySelector("#num");
+        const p = document.querySelector("#res");
+
+        num.addEventListener("input", () => {
+            const value = Number(num.value);
+
+            if (num.value === "") {
+                p.textContent = "";
+            } else {
+                p.textContent = `The number is ${value % 2 === 0 ? "Even" : "Odd"}`;
+            }
+        });
+    </script>
+</body>
+</html>

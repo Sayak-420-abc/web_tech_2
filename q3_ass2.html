@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question3</title>
+</head>
+<body>
+    <button id="btn">Click me</button>
+    <p id="res"></p>
+    <script>
+        let count=0;
+        const btn = document.querySelector("#btn");
+        const p = document.querySelector("#res");
+
+        btn.addEventListener("click", () => {
+            count++;
+            p.textContent = `The button was clicked ${count} ${(count==1)?" time":" times"}`;
+        });
+    </script>
+</body>
+</html>
