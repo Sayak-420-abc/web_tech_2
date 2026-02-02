@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number to Words (0 - 999)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 220px;
+        }
+        
+        button {
+            padding: 10px 14px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .msg {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .error {
+            color: red;
+        }
+        
+        .ok {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Enter a number (0 to 999)</h2>
+
+    <input type="text" id="num" placeholder="0 - 999" maxlength="3" />
+    <button onclick="convert()">Convert</button>
+
+    <div class="msg" id="result"></div>
+
+    <script>
+        // Block alphabets, special characters, and more than 3 digits while typing
+        const input = document.getElementById("num");
+
+        input.addEventListener("input", () => {
+            // keep only digits
+            input.value = input.value.replace(/[^0-9]/g, "");
+
+            // restrict to max 3 digits
+            if (input.value.length > 3) input.value = input.value.slice(0, 3);
+
+            // restrict to 0-999
+            if (input.value !== "" && Number(input.value) > 999) {
+                input.value = "999";
+            }
+        });
+
+        function numberToWords(n) {
+            const ones = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+            const teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+            const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+
+            if (n < 10) return ones[n];
+            if (n < 20) return teens[n - 10];
+            if (n < 100) {
+                let t = Math.floor(n / 10);
+                let o = n % 10;
+                return o === 0 ? tens[t] : tens[t] + " " + ones[o];
+            }
+            // 100 - 999
+            let h = Math.floor(n / 100);
+            let rem = n % 100;
+            if (rem === 0) return ones[h] + " Hundred";
+            return ones[h] + " Hundred " + numberToWords(rem);
+        }
+
+        function convert() {
+            const val = input.value;
+            const result = document.getElementById("result");
+
+            if (val === "") {
+                result.className = "msg error";
+                result.innerText = "❌ Please enter a number.";
+                return;
+            }
+
+            // final validation (no 4+ digits, no letters, no special chars, range 0-999)
+            if (!/^\d{1,3}$/.test(val)) {
+                result.className = "msg error";
+                result.innerText = "❌ Only numbers (0 to 999) are allowed.";
+                return;
+            }
+
+            const num = Number(val);
+            if (num < 0 || num > 999) {
+                result.className = "msg error";
+                result.innerText = "❌ Enter number between 0 and 999 only.";
+                return;
+            }
+
+            result.className = "msg ok";
+            result.innerText = "✅ In words: " + numberToWords(num);
+        }
+    </script>
+
+</body>
+
+</html>

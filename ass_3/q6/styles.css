@@ -1,0 +1,216 @@
+:root {
+    --accent: #2b8aef;
+    --muted: #6c757d;
+    --bg: #f8fbfd
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: Roboto, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: #222
+}
+
+.container {
+    max-width: 980px;
+    margin: 1.25rem auto;
+    padding: 1rem
+}
+
+.hero {
+    background: #fff;
+    padding: 1.25rem;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.03);
+}
+
+.serif {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin: .25rem 0
+}
+
+.sans {
+    font-family: Roboto, sans-serif;
+    color: var(--muted)
+}
+
+.cursive {
+    font-family: Pacifico, cursive;
+    color: var(--accent);
+    margin-top: .35rem
+}
+
+.main-nav {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap
+}
+
+.main-nav .nav-link {
+    color: var(--accent);
+    text-decoration: none;
+    padding: .35rem .6rem;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.03)
+}
+
+.main-nav .nav-link.special {
+    background: linear-gradient(90deg, #fff7ec, #fff)
+}
+
+.demo {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 6px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+
+/* ensure content sits above the animated fader */
+
+.demo>* {
+    position: relative;
+    z-index: 1
+}
+
+
+/* animated overlay used to cross-fade background images */
+
+.bg-fader {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .36s ease;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+
+/* Controls for demo examples */
+
+.controls {
+    margin-top: .75rem;
+    display: flex;
+    gap: .5rem;
+    align-items: center
+}
+
+.controls .status {
+    margin-left: .5rem;
+    color: var(--muted);
+    font-size: .95rem
+}
+
+.bg-toggle {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: .4rem .6rem;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+.bg-toggle[aria-pressed="true"] {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent)
+}
+
+
+/* background-repeat example - small image repeats */
+
+.demo.repeat {
+    background-image: url('https://via.placeholder.com/64');
+    background-repeat: repeat;
+    background-size: 64px 64px
+}
+
+
+/* no-repeat example - image is centered and does not repeat */
+
+.demo.no-repeat {
+    background-image: url('https://via.placeholder.com/420x160');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain
+}
+
+
+/* Link styles (pseudo-classes) */
+
+a:link,
+.state-link:link {
+    color: #1a6fb3;
+    text-decoration: none
+}
+
+a:visited,
+.state-link.visited {
+    color: #6a2a9b
+}
+
+a:hover,
+.state-link:hover {
+    color: #fff;
+    background: var(--accent);
+    padding: .2rem .4rem;
+    border-radius: 4px;
+    transition: all .15s ease
+}
+
+a:active,
+.state-link:active {
+    transform: translateY(1px)
+}
+
+
+/* Customized cursors for links */
+
+
+/* small red circle cursor (SVG data URI) */
+
+.state-link.special {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><circle cx='16' cy='16' r='8' fill='%23ff6b6b'/></svg>") 16 16, pointer
+}
+
+
+/* alternative custom cursor for main nav links (use crosshair fallback) */
+
+.main-nav .nav-link {
+    cursor: crosshair
+}
+
+.message {
+    margin-top: 1rem;
+    color: var(--muted)
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1rem;
+    color: var(--muted)
+}
+
+@media(max-width:640px) {
+    .main-nav {
+        justify-content: center
+    }
+    .hero {
+        padding: .75rem
+    }
+}

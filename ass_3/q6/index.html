@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Q6 — CSS Features Demo</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="hero">
+        <h1 class="serif">Playfair Display — Serif Heading</h1>
+        <p class="sans">Roboto — Sans-serif subtitle showing different font family and weight.</p>
+        <p class="cursive">Pacifico — Cursive font as an accent line.</p>
+    </header>
+
+    <nav class="main-nav">
+        <a class="nav-link" href="#demo1">Demo: Background Repeat</a>
+        <a class="nav-link special" href="#demo2">Demo: No-repeat</a>
+        <a class="nav-link" href="#links">Link Styles</a>
+    </nav>
+
+    <main class="container">
+        <section id="demo1" class="demo repeat">
+            <h2>background-repeat: repeat</h2>
+            <p>This box uses a small image that repeats to fill the background.</p>
+            <div class="controls">
+                <button class="btn bg-toggle" data-target="demo1" data-mode="repeat" aria-pressed="true">Repeat</button>
+                <button class="btn bg-toggle" data-target="demo1" data-mode="no-repeat" aria-pressed="false">No-repeat</button>
+                <span class="status" id="demo1-status">Current: <strong>repeat</strong></span>
+            </div>
+            <div class="bg-fader" aria-hidden="true"></div>
+        </section>
+
+        <section id="demo2" class="demo no-repeat">
+            <h2>background-repeat: no-repeat</h2>
+            <p>This box uses a larger image shown once (no-repeat) and centered.</p>
+            <div class="controls">
+                <button class="btn bg-toggle" data-target="demo2" data-mode="repeat" aria-pressed="false">Repeat</button>
+                <button class="btn bg-toggle" data-target="demo2" data-mode="no-repeat" aria-pressed="true">No-repeat</button>
+                <span class="status" id="demo2-status">Current: <strong>no-repeat</strong></span>
+            </div>
+            <div class="bg-fader" aria-hidden="true"></div>
+        </section>
+
+        <section id="links" class="links-demo">
+            <h2>Link Pseudo-classes & Custom Cursor</h2>
+            <p>Standard link states are demonstrated below. Move the mouse and click them to observe styling and cursor changes.</p>
+            <p>
+                <a class="state-link" href="#link1">Normal link</a> &nbsp;|&nbsp;
+                <a class="state-link visited" href="#link2">Visited link (demo)</a> &nbsp;|&nbsp;
+                <a class="state-link special" href="#link3">Special link (custom cursor)</a>
+            </p>
+            <div id="message" class="message" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Q6 — CSS demo including fonts, background-repeat/no-repeat, link pseudo-classes, and custom cursors.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

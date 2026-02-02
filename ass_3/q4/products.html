@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Products — Online Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <h1 class="logo"><a href="index.html">Online Shop</a></h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="cart.html">Cart <span id="cart-count" class="badge">0</span></a>
+                <a href="login.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>All Products</h2>
+        <div class="grid">
+            <article class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Product A">
+                <h4>Product A</h4>
+                <p class="price">$19.99</p>
+                <div class="actions">
+                    <a class="btn" href="product.html">View</a>
+                    <button class="btn add-to-cart" data-id="p1" data-name="Product A" data-price="19.99">Add to Cart</button>
+                </div>
+            </article>
+            <article class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Product B">
+                <h4>Product B</h4>
+                <p class="price">$29.99</p>
+                <div class="actions">
+                    <a class="btn" href="product.html">View</a>
+                    <button class="btn add-to-cart" data-id="p2" data-name="Product B" data-price="29.99">Add to Cart</button>
+                </div>
+            </article>
+            <article class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Product C">
+                <h4>Product C</h4>
+                <p class="price">$9.99</p>
+                <div class="actions">
+                    <a class="btn" href="product.html">View</a>
+                    <button class="btn add-to-cart" data-id="p3" data-name="Product C" data-price="9.99">Add to Cart</button>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Online Shop</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
