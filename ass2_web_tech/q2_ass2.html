@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Square and Cube Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Find Square and Cube</h2>
+
+    <input type="number" id="numInput" placeholder="Enter a number">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculate() {
+      
+            let num = document.getElementById("numInput").value;
+            num = parseFloat(num);
+
+            if (isNaN(num)) {
+                document.getElementById("result").innerHTML =
+                    "Please enter a valid number.";
+                return;
+            }
+
+            let square = num * num;
+            let cube = num * num * num;
+
+            document.getElementById("result").innerHTML =
+                "Square: " + square + "<br>Cube: " + cube;
+        }
+    </script>
+
+</body>
+</html>

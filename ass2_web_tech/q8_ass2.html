@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Textbox Validation</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            margin-top: 100px;
+        }
+        #warning {
+            color: red;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Input Validation</h2>
+
+    <input type="text" id="nameBox" placeholder="Enter your name">
+    <br><br>
+
+    <button onclick="validateInput()">Submit</button>
+
+    <div id="warning"></div>
+
+    <script>
+        function validateInput() {
+            let text = document.getElementById("nameBox").value;
+
+            if (text.trim() === "") {
+                document.getElementById("warning").innerHTML =
+                    "⚠️ Input field cannot be empty!";
+            } else {
+                document.getElementById("warning").innerHTML =
+                    "Submitted successfully!";
+            }
+        }
+    </script>
+
+</body>
+</html>

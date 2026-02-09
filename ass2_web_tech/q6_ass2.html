@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marks Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Marks Calculator</h2>
+
+    <input type="number" id="sub1" placeholder="Subject 1 Marks"><br>
+    <input type="number" id="sub2" placeholder="Subject 2 Marks"><br>
+    <input type="number" id="sub3" placeholder="Subject 3 Marks"><br>
+
+    <button onclick="calculateResult()">Calculate</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateResult() {
+
+            let m1 = parseFloat(document.getElementById("sub1").value);
+            let m2 = parseFloat(document.getElementById("sub2").value);
+            let m3 = parseFloat(document.getElementById("sub3").value);
+
+            if (isNaN(m1) || isNaN(m2) || isNaN(m3)) {
+                document.getElementById("result").innerHTML =
+                    "Please enter all marks.";
+                return;
+            }
+
+            let total = m1 + m2 + m3;
+            let average = total / 3;
+
+            let result = (average >= 40) ? "Pass" : "Fail";
+
+            document.getElementById("result").innerHTML =
+                "Total Marks: " + total + "<br>" +
+                "Average: " + average.toFixed(2) + "<br>" +
+                "Result: " + result;
+        }
+    </script>
+
+</body>
+</html>
